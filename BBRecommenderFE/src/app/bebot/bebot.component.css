@@ -1,0 +1,115 @@
+.chat-circle {
+    position: fixed;
+    bottom: 10px;
+    right: 35px;
+    z-index: 9999;
+  }
+  
+  .chat-circle button {
+    background-color: transparent;
+    color: #fff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .chat-circle button img {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  .chat-window {
+    position: fixed;
+    bottom: 80px;
+    right: 40px;
+    width: 300px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+  }
+  
+  .chat-header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #01273d;
+    color: #fff;
+  }
+  
+  .underTitleChat {
+    /* font-size: 10px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .chat-body {
+    padding: 20px;
+    overflow: auto; 
+    scrollbar-width: none;
+  }
+  
+  .chat-body::-webkit-scrollbar {
+    width: 0;
+    position: relative;
+    height: 0;
+  }
+  
+  .input-container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .input-container input {
+    flex-grow: 1;
+    margin-right: 10px;
+  }
+  
+  .btn-chat{
+    height: 25px;
+  
+  }
+  
+  .bebot{
+    height: 30%;
+    width: 30%;
+  }
+  
+  .message-wrapper {
+    max-height: 225px; 
+    overflow-y: auto; 
+    overflow-x: hidden;
+  }
+  
+  /* Hide the scrollbar in Firefox */
+  .message-wrapper::-webkit-scrollbar {
+    width: 0;
+  }
+  
+  /* Hide the scrollbar in Chrome and Safari */
+  .message-wrapper::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+  .message-wrapper::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 5px;
+  }

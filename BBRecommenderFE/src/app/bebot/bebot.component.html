@@ -1,0 +1,29 @@
+<div class="chat-circle">
+    <button (click)="openCloseChat()">
+      <img src="assets/chatIcon.png" alt="Chat">
+    </button>
+
+  </div>
+
+  <div class="chat-window" *ngIf="isChatOpen">
+    <div class="chat-header">
+      <img src="assets/BeBotOn.png" alt="" class="bebot">
+    </div>
+
+    <div class="chat-body"  #chatBody>
+      <div class="message">
+        <h6 class="underTitleChat">Ask BeBot a MA Question</h6>
+        <hr>
+        <div class="message-wrapper" #messageWrapper>
+          <div class="message-content" *ngFor="let message of messages">
+            <p><strong>{{ message.author }}: </strong>{{ message.content }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="input-container">
+      <input type="text" [(ngModel)]="value" (keyup.enter)="sendMessage()" placeholder="Type your message here">
+      <button mat-raised-button color="primary" class="btn-chat" (click)="sendMessage()">Send</button>
+    </div>
+  </div>

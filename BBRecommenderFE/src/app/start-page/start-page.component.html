@@ -1,0 +1,27 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav [(opened)]="this.navState.navState" mode="side">
+    <app-sidebar></app-sidebar>
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+
+    <div class="content">
+      <button mat-mini-fab (click)="this.navState.changeNavState()" color="custom"
+        aria-label="Example icon button with a menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <div class="container">
+        <img class="logo" src="assets\RecommenderLogo.png">
+        <br>
+        <h3>BeBold tool recommender</h3>
+        <h5><i>Let's pick the tool for you</i></h5>
+        <br>
+        <button [routerLink]="['/start-test']" class="btn-dark-blue">Do Recommendation</button>
+      </div>
+    </div>
+
+    <app-bebot></app-bebot>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

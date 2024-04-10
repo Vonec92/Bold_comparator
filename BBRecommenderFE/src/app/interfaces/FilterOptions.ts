@@ -1,0 +1,22 @@
+export interface FilterOptions {
+    budget : number,
+    hasFreeTrial: boolean,
+    countOfUsers: number,
+    contracts: number,
+    companySize: number,
+    industryType: string[],
+    levelOfCustomazion: string[],
+    levelOfSupport: string[],
+    hasCrmIntegration: Boolean,
+    goals: string[],
+    dbQuality: string[],
+    hasTransactionalEmail: boolean,
+    hasCommercialEmail: boolean,
+    easeOfUse: string[],
+    hasDragAndDrop: boolean,
+    hasGoogleAnalytics: boolean,
+    additionaAddOns: string[],
+    score: number,
+    features: string[],
+    cookies: string[] 
+}

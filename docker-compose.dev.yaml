@@ -1,0 +1,70 @@
+version: '3'
+services:
+  mysqldb:
+    ports:
+      - "3306:3306"
+    image: mysql:latest
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_DATABASE: RecommenderDB
+      MYSQL_USER: bold_user
+      MYSQL_PASSWORD: BOLD+USER*PW*1205*
+      MYSQL_ROOT_PASSWORD: PW*BBR!ROOT
+    networks:
+      - springmysql-net
+    volumes:
+      - db-data:/var/lib/mysql
+
+  backend:
+    build:
+      context: ./BBRecommenderBE
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8080:8080"
+    volumes:
+      - './BBRecommenderBE/src:/app/src'
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/RecommenderDB
+      SPRING_DATASOURCE_USERNAME: bold_user
+      SPRING_DATASOURCE_PASSWORD: BOLD+USER*PW*1205*
+    networks:
+      - springmysql-net
+    depends_on:
+      - mysqldb
+
+  frontend:
+    build:
+      context: ./BBRecommenderFE
+      dockerfile: Dockerfile.dev
+    ports:
+      - "4200:4200"
+    volumes:
+      - './BBRecommenderFE/src:/app/src'
+      - '/app/node_modules'  #  avoid overwriting node_modules inside the container
+    depends_on:
+      - backend
+    networks:
+      - springmysql-net
+
+volumes:
+  db-data:
+
+networks:
+  springmysql-net:
+    driver: bridge
+
+
+
+# push image to repositorty
+# docker build -t baetenjens/beboldrecommender:frontend ./BBRecommenderFE
+# docker build -t baetenjens/beboldrecommender:backend ./BBRecommenderBE
+
+# docker login
+# docker push baetenjens/beboldrecommender:frontend
+# docker push baetenjens/beboldrecommender:backend
+
+# pull on server
+# docker login
+# docker pull baetenjens/beboldrecommender:frontend
+# docker pull baetenjens/beboldrecommender:backend
+

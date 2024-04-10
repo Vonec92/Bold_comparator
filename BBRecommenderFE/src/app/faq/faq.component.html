@@ -1,0 +1,57 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav [(opened)]="this.navState.navState" mode="side">
+    <app-sidebar></app-sidebar>
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+
+    <div class="content">
+      <button mat-mini-fab (click)="this.navState.changeNavState()" color="custom"
+        aria-label="Example icon button with a menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <div class="container">
+        <!-- INPUT FIELD -->
+        <section class="d-flex justify-content-center align-items-center mb-4">
+          <div class="form-outline flex-fill">
+            <input type="text" id="form2"  maxlength="255" (keydown.enter)="addFAQ()" class="form-control" placeholder="Add faq"
+              [(ngModel)]="newFAQText" />
+          </div>
+          <button type="submit" (click)="addFAQ()" class="btn btn-info ms-2">Add</button>
+        </section>
+
+        <!-- FAQ LIST -->
+        <!--  LIST  -->
+        <ul class="list-group todos mx-auto text-light">
+          <li *ngFor="let faq of FAQList; let i = index" class="list-group-item d-flex justify-content-between align-items-center">
+            <ng-container *ngIf="!faq.editMode">
+              <div class="d-flex align-items-center">
+                <span> {{faq.question}} </span>
+              </div>
+              <a (click)="editFAQ(faq)" class="ms-auto mx-2" type="button" data-mdb-toggle="tooltip" title="edit item">
+                <i class="bi bi-pencil-fill text-black"></i>
+              </a>
+              <a (click)="removeFAQ(faq.id)" class="ml-auto  mx-1" type="button" data-mdb-toggle="tooltip"
+                title="Remove item">
+                <i class="bi bi-trash-fill text-danger"></i>
+              </a>
+            </ng-container>
+            <ng-container *ngIf="faq.editMode">
+              <textarea type="text"  maxlength="255" class="custom-input" [(ngModel)]="faq.question"></textarea>
+              <a (click)="saveFAQ(faq)" class="ms-auto mx-2" type="button" data-mdb-toggle="tooltip" title="Save">
+                <i class="bi bi-arrow-down-circle-fill text-black"></i>
+              </a>
+              <a (click)="cancelEdit(faq)" class="ml-auto  mx-1" type="button" data-mdb-toggle="tooltip" title="Cancel">
+                <b class="bi bi-x-square-fill text-danger "></b>
+              </a>
+            </ng-container>
+          </li>
+
+        </ul>
+        <br><br>
+      </div> 
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

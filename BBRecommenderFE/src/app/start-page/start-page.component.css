@@ -1,0 +1,38 @@
+
+/* main content  */
+.content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* instead of moving with margin make te content div smaller so it is always centered  */
+  height: 80%; 
+}
+
+.container {
+  text-align: center;
+  margin: auto;
+}
+
+.logo {
+  width: 40%; 
+}
+
+.btn-dark-blue {
+  background-color:  #01273d;
+  color: white;
+  border: none;
+  width: 30%;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.btn-dark-blue:hover {
+  background-color: #0b9da6;
+  color: white;
+}
+
+
+

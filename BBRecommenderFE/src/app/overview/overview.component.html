@@ -1,0 +1,36 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav [(opened)]="this.navState.navState" mode="side">
+    <app-sidebar></app-sidebar>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    
+    
+    <div class="content">
+      <button mat-mini-fab (click)="this.navState.changeNavState()" color="custom" aria-label="Example icon button with a menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <!-- Pills navs -->
+      <ul class="nav nav-pills" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" [ngClass]="{'active': showPersonal}" (click)="showPersonalRecommendations()" type="button">
+           <B class="bi bi-person-lines-fill"> Personal</B> 
+          </a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" [ngClass]="{'active': !showPersonal}" (click)="showAll()" type="button">
+            <b class="bi bi-list"> All</b>
+          </a>
+        </li>
+      </ul>
+
+      <div class="container">
+        <app-overview-table *ngIf="showPersonal" [recommendationsList]="personalRecommendations"></app-overview-table>
+        <app-overview-table *ngIf="!showPersonal" [recommendationsList]="allRecommendations"></app-overview-table>
+      </div>
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+

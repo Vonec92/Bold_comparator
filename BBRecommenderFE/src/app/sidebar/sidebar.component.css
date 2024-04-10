@@ -1,0 +1,11 @@
+.bottom {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 10%;
+  width: calc(100% - 31.5px);
+}
+
+a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}

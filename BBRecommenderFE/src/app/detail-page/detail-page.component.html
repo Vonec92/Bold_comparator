@@ -1,0 +1,58 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav [(opened)]="this.navState.navState" mode="side">
+    <app-sidebar></app-sidebar>
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+
+    <div class="content">
+      <!-- <button mat-mini-fab (click)="this.navState.changeNavState()" color="custom"
+        aria-label="Example icon button with a menu icon">
+        <mat-icon>menu</mat-icon>
+      </button> -->
+
+      <button mat-mini-fab color="custom"  [routerLink]="['/overview']">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+     
+
+      <ng-container *ngIf="recommendedTool">
+        <img [src]="'assets/' + recommendedTool.toolName + '.png'" alt={{recommendedTool.toolInfo.toolName}}>
+      
+      <br><br>
+      <div class="container">
+        <!-- Columns are always 50% wide, on mobile and desktop -->
+        <div class="row">
+          <div class="col col-info">
+            <h3>What is {{recommendedTool.toolName}} ? </h3>
+            <p>{{recommendedTool.toolInfo.toolDescription}}</p>
+            <div class="button-container">
+              <button mat-raised-button color="primary" class="login-btn" (click)="downloadPdf()">download
+                input</button>
+              <mat-spinner class="isProcessing" *ngIf="isProcessing" diameter="30"></mat-spinner>
+            </div>
+          </div>
+        
+
+
+          <div class="col">
+            <h3>Demo video</h3>
+            <iframe class='lg' width="560" height="315" [src]='sanitizeUrl(recommendedTool.toolInfo.toolVideoUrl)'
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+
+            <iframe class='sm' width="380" height="215" [src]='sanitizeUrl(recommendedTool.toolInfo.toolVideoUrl)'
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+      <app-bebot></app-bebot>
+    </ng-container>
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

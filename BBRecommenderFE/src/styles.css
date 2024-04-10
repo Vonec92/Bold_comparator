@@ -1,0 +1,73 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* sidebar navigation */
+mat-sidenav-container {
+  background-color: white !important;
+  height: 100%;
+}
+
+mat-sidenav, mat-sidenav-content {
+  padding: 16px;
+}
+
+mat-sidenav {
+  background-color: #F2F1F6 !important;
+  border: none !important;
+  box-shadow: 5px 0 10px 0px #dedddd;
+  width: 17%;
+}
+
+.mat-custom {
+  background-color: #F2F1F6 !important;
+  color: #000 !important;
+  font-size: 25px !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+}
+
+
+/* notifications */
+.green-snackbar {
+  --mdc-snackbar-container-color: rgb(4, 170, 65) !important;
+  --mat-mdc-snack-bar-button-color: #fff;
+  --mdc-snackbar-supporting-text-color: #fff;
+  margin-left: 70% !important;
+  padding-bottom: 5% !important;
+  transform: translateX(-50%) !important;
+}
+
+.green-snackbar button {
+  background-color: rgb(4, 170, 65);
+  color: white !important;
+  border: none;
+}
+
+
+.red-snackbar {
+  --mdc-snackbar-container-color: #F44336 !important;
+  --mat-mdc-snack-bar-button-color: #fff;
+  --mdc-snackbar-supporting-text-color: #fff;
+  margin-left: 70% !important;
+  padding-bottom: 5% !important;
+  transform: translateX(-50%) !important;
+}
+
+
+.red-snackbar button {
+  background-color: #F44336 !important;
+  color: white !important;
+  border: none;
+}
+
+

@@ -1,0 +1,177 @@
+<div class="filterbar" cdkDragBoundary=".content" cdkDragLockAxis="x" cdkDrag>
+  <div cdkDragHandle class="sticky-handle">
+    <mat-icon class="drag">drag_indicator</mat-icon>
+  </div>
+  <form [formGroup]="filterbar">
+
+    <!-- 1 . HAS FREE TRIAL  -->
+    <div class="accordion " id="accordionExample">
+      <div class="card">
+        <a class="acordion-card" data-toggle="collapse" (click)="collapse1 = !collapse1">
+          <div class="card-header">
+            <h6 class="mb-0 f-18">Has Free Trial</h6>
+          </div>
+        </a>
+        <div [(ngbCollapse)]="collapse1">
+          <div class="radioButton" *ngFor="let questionType of FilterbarValues.yesNoQuestion">
+
+            <input [value]='questionType.value' type="radio" formControlName="hasFreeTrial"
+              (change)="onCheckboxChange()">
+            {{questionType.name}}
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. budget / month -->
+    <div class="accordion" id="collapseSecond">
+      <div class="card mt-4 ">
+        <a class="acordion-card" data-toggle="collapse" (click)="collapse2 = !collapse2">
+          <div class="card-header">
+            <h6 class="mb-0 text-dark f-18 redAstrix">Monthly Budget </h6>
+          </div>
+        </a>
+        <div [(ngbCollapse)]="collapse2">
+
+          <div class="inputcard">
+            <input type="number" min="0" max="99999" class="form-control input" placeholder="Ex: 200" formControlName="budget"
+              (blur)="onCheckboxChange()" oninput="validity.valid||(value='');">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. COUNT OF USERS -->
+    <div class="accordion" id="collapseSecond">
+      <div class="card mt-4 ">
+        <a class="acordion-card" data-toggle="collapse" (click)="collapse3 = !collapse3">
+          <div class="card-header">
+            <h6 class="mb-0 text-dark f-18">Emails Per Month</h6>
+          </div>
+        </a>
+        <div [(ngbCollapse)]="collapse3">
+
+          <div class="inputcard">
+            <input type="number" min="0" max="999999999" class="form-control input" placeholder="Ex: 2000"
+              formControlName="emailsPerMonth" (blur)="onCheckboxChange()" oninput="validity.valid||(value='');">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. COUNT OF CONTRACTS -->
+    <div class="accordion" id="collapseSecond">
+      <div class="card mt-4 ">
+        <a class="acordion-card" data-toggle="collapse" (click)="collapse4 = !collapse4">
+          <div class="card-header">
+            <h6 class="mb-0 text-dark f-18">Amount of Contacts</h6>
+          </div>
+        </a>
+        <div [(ngbCollapse)]="collapse4">
+
+          <div class="inputcard">
+            <input type="number" min="0" max="999999999" class="form-control input" placeholder="Ex: 1500" formControlName="contacts"
+              (blur)="onCheckboxChange()" oninput="validity.valid||(value='');">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. FEATURES  -->
+    <div class="accordion" id="collapseSecond">
+      <div class="card mt-4 ">
+        <a class="acordion-card" data-toggle="collapse" (click)="collapse5 = !collapse5">
+          <div class="card-header">
+            <h6 class="mb-0 text-dark f-18">Features</h6>
+          </div>
+        </a>
+        <div [(ngbCollapse)]="collapse5">
+
+          <div class="checkbox radioButton" *ngFor="let feature of FilterbarValues.features; let i = index">
+            <input type="checkbox" [value]="feature" (change)="onMultiCheckChange($event, 'features')">
+            {{feature}}
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 6 LEVEL OF SUPPORT -->
+    <div class="accordion" id="collapseSecond">
+      <div class="card mt-4 ">
+        <a class="acordion-card" data-toggle="collapse" (click)="collapse6 = !collapse6">
+          <div class="card-header">
+            <h6 class="mb-0 text-dark f-18">Level of support</h6>
+          </div>
+        </a>
+        <div [(ngbCollapse)]="collapse6">
+
+          <div class="radioButton" *ngFor="let level of FilterbarValues.levelOfSupport">
+            <input [value]='level' type="radio" formControlName="levelOfSupport" (change)="onCheckboxChange()">
+            {{level}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. database quqlity  -->
+    <div class="accordion" id="collapseSecond">
+      <div class="card mt-4 ">
+        <a class="acordion-card" data-toggle="collapse" (click)="collapse7 = !collapse7">
+          <div class="card-header">
+            <h6 class="mb-0 text-dark f-18">Database Quality</h6>
+          </div>
+        </a>
+        <div [(ngbCollapse)]="collapse7">
+          <div class="radioButton" *ngFor="let quality of FilterbarValues.dbQuality">
+
+            <input [value]='quality' type="radio" formControlName="dbQuality" (change)="onCheckboxChange()">
+            {{quality}}
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. DRAG And Drop  -->
+    <div class="accordion" id="collapseSecond">
+      <div class="card mt-4 ">
+        <a class="acordion-card" data-toggle="collapse" (click)="collapse8 = !collapse8">
+          <div class="card-header">
+            <h6 class="mb-0 text-dark f-18">Drag and drop available</h6>
+          </div>
+        </a>
+        <div [(ngbCollapse)]="collapse8">
+
+          <div class="radioButton" *ngFor="let dragAndDrop of FilterbarValues.dragAndDrop">
+            <input [value]='dragAndDrop' type="radio" formControlName="hasDragAndDrop"
+              (change)="onCheckboxChange()">
+            {{dragAndDrop}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9. IMPLEMENTATION MODEL  -->
+    <div class="accordion" id="collapseSecond">
+      <div class="card mt-4 ">
+        <a class="acordion-card" data-toggle="collapse" (click)="collapse9 = !collapse9">
+          <div class="card-header">
+            <h6 class="mb-0 text-dark f-18">Implementation Model</h6>
+          </div>
+        </a>
+        <div [(ngbCollapse)]="collapse9">
+
+          <div class="radioButton" *ngFor="let model of FilterbarValues.implementationModel">
+            <input [value]='model' type="radio" formControlName="implementationModel" (change)="onCheckboxChange()">
+            {{model}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </form>
+</div>

@@ -1,0 +1,41 @@
+.content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.container {
+  text-align: center;
+  /* margin: auto;   */
+  margin-top: 2%;
+  width: 100%;
+  max-width: 100%; 
+  
+}
+
+.nav-link {
+  color: black;
+  cursor: pointer;
+}
+
+.active {
+  background-color: #01273d !important;
+  color: white;
+}
+
+.center {
+  text-align: center;
+}
+
+
+.btn-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+ul{
+  /* margin-top: 50px; */
+}

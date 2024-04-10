@@ -1,0 +1,72 @@
+.content {
+  position: relative;
+  height: 100%;
+}
+
+.input-card {
+  padding: 30px;
+  width: 40%;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+}
+
+.container {
+  text-align: center;
+  margin-top: 10px;
+  margin: auto;
+}
+
+.cancel {
+  width: 150px;
+  margin-right: 75px;
+}
+
+.save {
+  width: 150px;
+  margin-left: 75px;
+}
+
+.button-container {
+  width: 100%;
+  padding-top: 50px;
+  margin: auto;
+}
+
+img {
+  margin-top: 5%;
+}
+
+.drag {
+  cursor: grab;
+}
+
+.acordion-card {
+  text-decoration: none;
+}
+
+.acordion-card:hover {
+  background: #eee;
+  cursor: pointer;
+}
+
+.card-body {
+  margin: 1% 5%;
+}
+
+.card-header {
+  color: black;
+}
+
+.input-text {
+  margin-left: 2%;
+}
+
+mat-spinner {
+  margin: 0 auto;
+}
+
+.isProcessing {
+  margin-top: 3%;
+}

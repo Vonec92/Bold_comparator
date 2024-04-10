@@ -1,0 +1,35 @@
+<a [routerLink]="['/start']" 
+  class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none ">
+  <img src="assets\BeboldLogo.png" style="width: 60%;  ">
+</a>
+<hr>
+<ul class="nav nav-pills flex-column ">
+  <li class="nav-item" [routerLinkActive]="['active']">
+    <a class="nav-link link-dark" [routerLink]="['/start']">
+      <i class="bi bi-caret-right"></i> Start Test
+    </a>
+  </li>
+  <li class="nav-item" [routerLinkActive]="['active']">
+    <a class="nav-link link-dark" [routerLink]="['/overview']">
+      <i class="bi bi-list"></i> Overview
+    </a>
+  </li>
+  <li class="nav-item" [routerLinkActive]="['active']">
+    <a class="nav-link link-dark" [routerLink]="['/FAQ']">
+      <i class="bi bi-info-circle"></i> FAQ
+    </a>
+  </li>
+</ul>
+<ul class="nav nav-pills flex-column bottom">
+  <li class="nav-item" [routerLinkActive]="['active']">
+    <a class="nav-link link-dark" (click)="logout()" >
+      <i class="bi bi-box-arrow-right"></i> log out
+    </a>
+  </li>
+  <hr>
+  <li class="nav-item">
+      <!-- <img src="https://github.com/mdo.png" alt="unknown" width="30" height="30" class="rounded-circle"> -->
+      <span *ngIf="this.currentUser.name" class="d-none d-sm-inline mx-1"> <i class="bi bi-person-circle"></i>  {{currentUser.name}}</span>
+      <span *ngIf="!this.currentUser.name" class="d-none d-sm-inline mx-1"> <i class="bi bi-person-circle"></i>  {{getNameOutOfMail()}}</span>
+  </li>
+</ul>

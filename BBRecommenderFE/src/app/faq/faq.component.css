@@ -1,0 +1,33 @@
+
+.content {
+  position: relative;
+  height: 100%;
+}
+
+.container {
+  text-align: center;
+  width: 75%;
+  padding-top: 100px ;
+}
+
+.custom-input {
+  height: fit-content;
+  width: 90%;
+  border: 1px solid #ccc;
+}
+
+
+.btn-info{
+  background-color: #01273d;
+  border: none !important;
+  color: #ffffff;
+}
+
+.btn-info:hover{
+  background-color: #0b9da6;
+  border: none !important;
+  color: #ffffff;
+}
+
+
+

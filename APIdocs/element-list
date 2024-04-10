@@ -1,0 +1,12 @@
+be.bebold.digital.recommender.bbrecommenderbe
+be.bebold.digital.recommender.bbrecommenderbe.Config
+be.bebold.digital.recommender.bbrecommenderbe.Controllers
+be.bebold.digital.recommender.bbrecommenderbe.Dtos.ReadDTO
+be.bebold.digital.recommender.bbrecommenderbe.Dtos.UpdateDTO
+be.bebold.digital.recommender.bbrecommenderbe.Model
+be.bebold.digital.recommender.bbrecommenderbe.Payload.Responses
+be.bebold.digital.recommender.bbrecommenderbe.Repositories
+be.bebold.digital.recommender.bbrecommenderbe.Services
+be.bebold.digital.recommender.bbrecommenderbe.Services.mapper
+be.bebold.digital.recommender.bbrecommenderbe.Services.Values
+be.bebold.digital.recommender.bbrecommenderbe.Tasks

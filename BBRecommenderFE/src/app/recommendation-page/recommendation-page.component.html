@@ -1,0 +1,39 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav [(opened)]="this.navState.navState" mode="side">
+      <app-sidebar></app-sidebar>
+    </mat-sidenav>
+    <mat-sidenav-content>
+    
+      <div class="content">
+        <button mat-mini-fab (click)="this.navState.changeNavState()" color="custom" aria-label="Example icon button with a menu icon">
+          <mat-icon>menu</mat-icon>
+        </button>
+  
+        <app-filter-bar (filterbardata)="SetRecommendedTool($event)" (IsValidInput)="setIsValid($event)"></app-filter-bar>
+
+        <div class="container">
+          <form [formGroup]="form">
+            <div class="input-card">
+              <div class="card-body">
+                <h4 class="card-title">Company Name</h4>
+                <br>
+                <input type="text" maxlength="255" (keydown.enter)="form.valid && onSave()" class="form-control" formControlName="companyName" placeholder="Be Bold">
+              </div>
+            </div>
+            <br>
+            <p *ngIf="!form.valid || !isValidInput" style="color:red">*Fill in atleast 5 requirements and give the company a name*</p>
+
+
+            <mat-spinner class="isProcessing" *ngIf="isProcessing"></mat-spinner>
+            <img *ngIf="!isProcessing" [src]="'assets/' + this.recommendedToolName + '.png'" alt="{{this.recommendedToolName}}">
+      
+            <div class="button-container">
+              <button class="btn btn-danger cancel" type="button" (click)="OnCancel()" [routerLink]="['/start']"> Cancel</button>
+              <button class="btn btn-success save" id=savebtn type="button" [disabled]="!form.valid || !isValidInput || isSaving" (click)="onSave()"> Save </button>
+              <mat-spinner *ngIf="isSaving"></mat-spinner>
+            </div>
+          </form>
+        </div>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

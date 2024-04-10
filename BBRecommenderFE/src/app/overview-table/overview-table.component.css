@@ -1,0 +1,31 @@
+.mdc-data-table__header-cell{
+  background-color: #01273d !important;
+  color: #ffffff !important;
+}
+
+:root {
+  --color-ripple: #ff0000; /* Replace with your desired color */
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.right {
+  text-align: right;
+}
+
+.table-container{
+  overflow: auto;
+}
+
+.row-link:hover {
+  background-color: #F2F1F6 !important;
+  cursor: pointer;
+}
